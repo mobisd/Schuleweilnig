@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="courses.css">
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto p-4">
+    <div class="flex justify-between items-center mb-4">
+      <select class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
+        <option selected>Deutsch (de)</option>
+        <option selected>English (en)</option>
+      </select>
+      <div class="flex items-center">
+        <input class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" type="search" placeholder="Kurse suchen">
+        <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded ml-2">Search</button>
+      </div>
+      <div>
+        <span class="text-gray-700 text-sm">Schmid Moritz</span>
+      </div>
+    </div>
+
+    <div class="flex">
+      <div class="w-1/4 pr-4">
+        <div class="bg-white shadow-lg rounded-lg p-4 w-64">
+            <p class="font-bold text-lg mb-4">Navigation</p>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="flex items-center text-gray-900 hover:text-red-500 transition-colors">
+                  <i class="fas fa-home mr-2"></i> Startseite
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex items-center text-gray-900 hover:text-red-500 transition-colors">
+                  <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
+                </a>
+              </li>
+              <li>
+                <div class="flex items-center cursor-pointer" onclick="toggleDropdown('meine-kurse-dropdown')">
+                  <i class="fas fa-caret-right mr-2"></i>
+                  <span class="text-gray-900 hover:text-red-500 transition-colors">Meine Kurse</span>
+                </div>
+                <ul id="meine-kurse-dropdown" class="hidden pl-4">
+                  <li>
+                    <div class="flex items-center cursor-pointer" onclick="toggleDropdown('fitn-dropdown')">
+                      <i class="fas fa-caret-right mr-2"></i>
+                      <span class="text-gray-900 hover:text-red-500 transition-colors">FITN/M (FID)</span>
+                    </div>
+                    <ul id="fitn-dropdown" class="hidden pl-4">
+                      <li>
+                        <div class="flex items-center cursor-pointer" onclick="toggleDropdown('3afit-dropdown')">
+                          <i class="fas fa-caret-right mr-2"></i>
+                          <span class="text-gray-900 hover:text-red-500 transition-colors">3AFIT</span>
+                        </div>
+                        <ul id="3afit-dropdown" class="hidden pl-4">
+                          <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">SYTCP_3AFIT_2324</a></li>
+                          <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">MEDT_3AFIT_2324</a></li>
+                          <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">MEDTw_3AFIT_2324</a></li>
+                          <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">NWT4a_3AFIT_2324</a></li>
+                          <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">NWT_3AFIT_2324</a></li>
+                          <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">AM_3AFIT_2324</a></li>
+                          <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">INSI_3AFIT_2324</a></li>
+                          <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">SYT_3AFIT_2324</a></li>
+                          <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">SYTLAB_3AFIT_2324</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              
+            </ul>
+          </div>
+      </div>
+
+      <!-- Course List -->
+      <div class="w-3/4">
+        <div class="bg-white shadow-lg rounded-lg p-4">
+            <h1 class="font-bold text-xl mb-6">3AFITN</h1>
+            <div class="space-y-4">
+                <div class="border-b border-gray-200 pb-4">
+                <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">SYTCP - Systemtechnik Computerpraktikum - 3AFITN - SJ2324</h3>
+                <p class="text-gray-600">Trainer/in: Danek Manuela</p>
+                <p class="text-gray-600">Trainer/in: Mohr Stephanie</p>
+                <p class="text-gray-600">Trainer/in: Rodas Fitzgerald</p>
+                </a>
+            </div>
+              <div class="border-b border-gray-200 pb-4">
+                <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">MEDT - Medientechnik - 3AFITN - SJ2324</h3>
+                <p class="text-gray-600">Trainer/in: Riedl Thomas</p>
+                </a>
+            </div>
+              <div class="border-b border-gray-200 pb-4">
+                <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">MEDTw - Medientechnik - 3AFITN - SJ2324</h3>
+                <p class="text-gray-600">Trainer/in: Zöttl Andreas</p>
+                </a>
+            </div>
+              <div class="border-b border-gray-200 pb-4">
+                <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">NWT4a - Netzwerktechnik - Computerpraktikum - 3AFIT - SJ2324</h3>
+                <p class="text-gray-600">Trainer/in: Amcha Alfred</p>
+                <p class="text-gray-600">Trainer/in: Felix Mario</p>
+                </a>
+            </div>
+              <div class="border-b border-gray-200 pb-4">
+                <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">NWT - Netzwerktechnik - 3AFIT - SJ2324</h3>
+                <p class="text-gray-600">Trainer/in: Amcha Alfred</p>
+                <p class="text-gray-600">Trainer/in: Keminger Alexander</p>
+                <p class="text-gray-600">Trainer/in: Subotic Nenad</p>
+            </a>
+        </div>
+            <div class="border-b border-gray-200 pb-4">
+                <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">AM - Angewandte Mathematik - 3AFIT - SJ2324</h3>
+                <p class="text-gray-600">Trainer/in: Bogensperger Brigitte</p>
+                </a>
+            </div>
+            <div class="border-b border-gray-200 pb-4">
+                <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">INSI - Informationssysteme und IT-Sicherheit - 3AFIT - SJ2324</h3>
+                <p class="text-gray-600">Trainer/in: Bogensperger Brigitte</p>
+                <p class="text-gray-600">Trainer/in: Neuwirth Veronika</p>
+                </a>
+            </div>
+            <div class="border-b border-gray-200 pb-4">
+                <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">SYT - Systemtechnik - 3AFIT - SJ2324</h3>
+                <p class="text-gray-600">Trainer/in: Rodas Fitzgerald</p>
+                </a>
+            </div>
+        <div class="border-b border-gray-200 pb-4">
+            <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">SYTLAB - Systemtechnik Labor - 3AFIT - SJ2324</h3>
+                <p class="text-gray-600">Trainer/in: Danek Manuela</p>
+                <p class="text-gray-600">Trainer/in: Rodas Fitzgerald</p>
+            </a>
+        </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script>
+function toggleDropdown(dropdownId) {
+  var element = document.getElementById(dropdownId);
+  var caret = element.previousElementSibling.getElementsByTagName('i')[0];
+  if (element.classList.contains('hidden')) {
+    element.classList.remove('hidden');
+    caret.classList.remove('fa-caret-right');
+    caret.classList.add('fa-caret-down');
+  } else {
+    element.classList.add('hidden');
+    caret.classList.add('fa-caret-right');
+    caret.classList.remove('fa-caret-down');
+  }
+}
+</script>
+</body>
+</html>
