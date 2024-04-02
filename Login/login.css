@@ -1,0 +1,100 @@
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ff4d4d; /* Fallback for browsers that do not support gradients */
+    background: linear-gradient(-45deg, #ffffff, #ff0000, #ffffff, #ff0000);
+    background-size: 400% 400%;
+    animation: gradientWave 8s ease infinite; /* Faster animation speed */
+  }
+  
+  @keyframes gradientWave {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .form-signin {
+    max-width: 800px; /* Smaller width for a more modern look */
+    padding: 2rem;
+    background-color: #fff;
+    border: none; /* Remove the border for a cleaner look */
+    border-radius: 10px; /* Rounded corners for a modern feel */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); /* Even more noticeable shadow */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align the contents */
+  }
+  
+  .form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
+  
+  .form-signin input[type="email"],
+  .form-signin input[type="password"] {
+    width: 100%; /* Full width inputs */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd; /* Subtle border for inputs */
+    background-color: #f9f9f9; /* Slight off-white background */
+    border-radius: 5px; /* Rounded borders for the inputs */
+  }
+  
+  .form-signin button {
+    width: 100%; /* Full width button */
+    padding: 15px;
+    background-color: #e60000; /* Vivid red background for the button */
+    border: none;
+    color: white;
+    border-radius: 5px; /* Rounded borders for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the button */
+    transition: background-color 0.3s, transform 0.1s; /* Smooth transitions */
+  }
+  
+  .form-signin button:hover {
+    color: rgb(255, 255, 255);
+    background-color: #fd0000; /* Lighter red on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  }
+  
+  /* ... Other styles ... */
+
+.remember-me-container {
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Custom styles for the checkbox */
+  .remember-me-container input[type="checkbox"] {
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  .remember-me-container label {
+    cursor: pointer;
+    color: #555; /* Darker text for better readability */
+    transition: color 0.3s; /* Smooth transition for color change */
+  }
+  
+  .remember-me-container input[type="checkbox"]:checked + label {
+    color: #e60000; /* Change label color when selected */
+  }
+  
+
+  .form-signin button:hover,
+  .remember-me-container label:hover {
+    color: #ffffff; /* Hover color for interactivity */
+  }
+  
