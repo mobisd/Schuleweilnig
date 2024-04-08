@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bewertungstabelle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    
+    <div class="container mx-auto my-8">
+        <div class="w-1/4 pr-4">
+            <div class="bg-white shadow-lg rounded-lg p-4 w-64">
+                <p class="font-bold text-lg mb-4">Navigation</p>
+                <ul class="space-y-2">
+                  <li>
+                    <a href="#" class="flex items-center text-gray-900 hover:text-red-500 transition-colors">
+                      <i class="fas fa-home mr-2"></i> Startseite
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center text-gray-900 hover:text-red-500 transition-colors">
+                      <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
+                    </a>
+                  </li>
+                  <li>
+                    <div class="flex items-center cursor-pointer" onclick="toggleDropdown('meine-kurse-dropdown')">
+                      <i class="fas fa-caret-right mr-2"></i>
+                      <span class="text-gray-900 hover:text-red-500 transition-colors">Meine Kurse</span>
+                    </div>
+                    <ul id="meine-kurse-dropdown" class="hidden pl-4">
+                      <li>
+                        <div class="flex items-center cursor-pointer" onclick="toggleDropdown('fitn-dropdown')">
+                          <i class="fas fa-caret-right mr-2"></i>
+                          <span class="text-gray-900 hover:text-red-500 transition-colors">FITN/M (FID)</span>
+                        </div>
+                        <ul id="fitn-dropdown" class="hidden pl-4">
+                          <li>
+                            <div class="flex items-center cursor-pointer" onclick="toggleDropdown('3afit-dropdown')">
+                              <i class="fas fa-caret-right mr-2"></i>
+                              <span class="text-gray-900 hover:text-red-500 transition-colors">3AFIT</span>
+                            </div>
+                            <ul id="3afit-dropdown" class="hidden pl-4">
+                              <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">SYTCP_3AFIT_2324</a></li>
+                              <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">MEDT_3AFIT_2324</a></li>
+                              <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">MEDTw_3AFIT_2324</a></li>
+                              <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">NWT4a_3AFIT_2324</a></li>
+                              <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">NWT_3AFIT_2324</a></li>
+                              <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">AM_3AFIT_2324</a></li>
+                              <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">INSI_3AFIT_2324</a></li>
+                              <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">SYT_3AFIT_2324</a></li>
+                              <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">SYTLAB_3AFIT_2324</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  
+                </ul>
+              </div>
+          </div>
+        <div class="shadow overflow-hidden rounded border-b border-gray-200">
+            <table class="min-w-full bg-white">
+                <thead class="bg-gray-800 text-white">
+                    <tr>
+                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Bewertungsaspekt</th>
+                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Berechnete Gewichtung</th>
+                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Bewertung</th>
+                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Bereich</th>
+                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Prozentsatz</th>
+                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Feedback</th>
+                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Beiträge zum Kurs gesamt</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-700">
+                    <tr>
+                        <td class="text-left py-3 px-4">SYT_3AFITR_2324</td>
+                        <td class="text-left py-3 px-4">12,50 %</td>
+                        <td class="text-left py-3 px-4">70 % (3)</td>
+                        <td class="text-left py-3 px-4">0–100 %</td>
+                        <td class="text-left py-3 px-4">70 %</td>
+                        <td class="text-left py-3 px-4">Material? Arbeitsstunden? Anmerkung, dass das Kabel nicht fertig wurde fehlt?</td>
+                        <td class="text-left py-3 px-4">4 %</td>
+                    </tr>
+                    <!-- ... Other rows ... -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
