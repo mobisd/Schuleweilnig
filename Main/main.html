@@ -2,39 +2,149 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Site</title>
+    <title>Moodle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      /* Add custom styles here if needed */
-    </style>
 </head>
 <body class="bg-gray-100">
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-4">
+        <select id="language-select" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
+            <option value="de">Deutsch (de)</option>
+          </select>
+      <div class="flex items-center">
+        <input class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" type="search" placeholder="Kurse suchen">
+        <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded ml-2">Search</button>
+      </div>
+      <div>
+        <span class="text-gray-700 text-sm">Schmid Moritz</span>
+      </div>
+    </div>
 
-    <!-- Header or Navbar -->
-    <header class="bg-white shadow">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-            <h1 class="text-3xl font-bold text-gray-900">
-                Willkommen zurück, Moritz Schmid! 👋
-            </h1>
-            <!-- Add right-side header content here -->
+    <!-- Main content area -->
+    <div class="container mx-auto p-4">
+        <!-- Sidebar & Content -->
+        <div class="flex">
+            <div class="w-1/4 pr-4">
+              <div class="bg-white shadow-lg rounded-lg p-4 w-64">
+                  <p class="font-bold text-lg mb-4">Navigation</p>
+                  <ul class="space-y-2">
+                    <li>
+                      <a href="/Main/main.html" class="flex items-center text-gray-900 hover:text-red-500 transition-colors">
+                        <i class="fas fa-home mr-2"></i> Startseite
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="flex items-center text-gray-900 hover:text-red-500 transition-colors">
+                        <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/gambling hihihih/mobigambling.html" class="flex items-center text-gray-900 hover:text-red-500 transition-colors">
+                        <i class="fas fa-dice mr-2"></i> GAMBLING RAHHHHH
+                      </a>
+                    </li>
+                    <li>
+                      <div class="flex items-center cursor-pointer" onclick="toggleDropdown('meine-kurse-dropdown')">
+                        <i class="fas fa-caret-right mr-2"></i>
+                        <span class="text-gray-900 hover:text-red-500 transition-colors">Meine Kurse</span>
+                      </div>
+                      <ul id="meine-kurse-dropdown" class="hidden pl-4">
+                        <li>
+                          <div class="flex items-center cursor-pointer" onclick="toggleDropdown('fitn-dropdown')">
+                            <i class="fas fa-caret-right mr-2"></i>
+                            <span class="text-gray-900 hover:text-red-500 transition-colors">FITN/M (FID)</span>
+                          </div>
+                          <ul id="fitn-dropdown" class="hidden pl-4">
+                            <li>
+                              <div class="flex items-center cursor-pointer" onclick="toggleDropdown('3afit-dropdown')">
+                                <i class="fas fa-caret-right mr-2"></i>
+                                <span class="text-gray-900 hover:text-red-500 transition-colors"><a href="courses.html">3AFITN</a></span>
+                              </div>
+                              <ul id="3afit-dropdown" class="hidden pl-4">
+                                <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">SYTCP_3AFIT_2324</a></li>
+                                <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">MEDT_3AFIT_2324</a></li>
+                                <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">MEDTw_3AFIT_2324</a></li>
+                                <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">NWT4a_3AFIT_2324</a></li>
+                                <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">NWT_3AFIT_2324</a></li>
+                                <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">AM_3AFIT_2324</a></li>
+                                <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">INSI_3AFIT_2324</a></li>
+                                <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">SYT_3AFIT_2324</a></li>
+                                <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">SYTLAB_3AFIT_2324</a></li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    
+                  </ul>
+                </div>
+            </div>
+
+            <!-- Main content -->
+            <div class="w-3/4">
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <h2 class="font-semibold mb-2">Kursbereiche</h2>
+                    <!-- Course areas content -->
+                </div>
+            </div>
         </div>
-    </header>
+    </div>
 
-    <!-- Main content -->
-    <main class="mt-6">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <!-- Add your main site content here -->
-            <!-- This could include cards, tables, lists, etc. -->
+    <footer class="bg-white dark:bg-gray-900">
+        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+            <div class="md:flex md:justify-between">
+              <div class="mb-6 md:mb-0">
+                  <a href="https://flowbite.com/" class="flex items-center">
+                      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Moodle</span>
+                  </a>
+              </div>
+              <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                  <div>
+                      <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+                      <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                          <li class="mb-4">
+                              <a href="https://www.tiktok.com/@mobi.vfx" class="hover:underline ">TikTok</a>
+                          </li>
+                          <li>
+                              <a href="https://www.instagram.com/htl_spengergasse/" class="hover:underline">Insta</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div>
+                      <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                      <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                          <li class="mb-4">
+                              <a href="#" class="hover:underline">Privacy Policy</a>
+                          </li>
+                          <li>
+                              <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+          <div class="sm:flex sm:items-center sm:justify-between">
+              <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 Schmid, Tadeja, Popov <a href="#" class="hover:underline">Moodle™</a>. All Rights Reserved.
+              </span>
+              <div class="flex mt-4 sm:justify-center sm:mt-0">
+                <a href="https://www.tiktok.com/@mobi.vfx" class="text-gray-500 hover:text-gray-900 dark:hover:text-dark ms-5">
+                  <i class="fas fa-home"></i> Home
+                </a>
+                <a href="https://www.instagram.com/htl_spengergasse/" class="text-gray-500 hover:text-gray-900 dark:hover:text-dark ms-5">
+                  <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="https://www.tiktok.com/@mobi.vfx" class="text-gray-500 hover:text-gray-900 dark:hover:text-dark ms-5">
+                  <i class="fab fa-tiktok"></i> TikTok
+                </a>
+              </div>
+          </div>
         </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <!-- Footer content goes here -->
-        </div>
-    </footer>
-
+      </footer>
 </body>
 </html>
