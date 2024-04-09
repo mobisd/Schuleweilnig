@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice Game Calculation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Ensures the profit cannot be manually edited */
+        #profit-on-win:read-only {
+            background-color: #1F2937; /* Tailwind gray-800 */
+            color: #9CA3AF; /* Tailwind gray-400 */
+        }
+
+        #multiplier,
+        #roll-over {
+            width: 10rem;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%; 
+            background: blue;
+            cursor: pointer;
+        }
+
+        .slider::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            border-radius: 1.5px;
+            background: red;
+        }
+
+        #bet-result {
+            display: none;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+        }
+
+        #bet-win {
+            background-color: green;
+        }
+
+        #bet-lose {
+            background-color: red;
+        }
+    </style>
+</head>
+<body class="bg-gray-800 flex items-center justify-center h-screen">
+    <div class="bg-gray-900 p-8 rounded-lg text-white w-96 space-y-4">
+        <a href="/Main/main.html"><h4 class="font-semibold mb-5">Zurück zu Moodle</h4></a>
+        <div>
+            <label for="bet-amount" class="block">Bet Amount</label>
+            <input type="number" id="bet-amount" class="w-full p-2 mt-1 bg-gray-800 rounded" placeholder="$1.00">
+        </div>
+
+        <div>
+            <label for="profit-on-win" class="block">Profit on Win</label>
+            <input type="text" id="profit-on-win" class="w-full p-2 mt-1 bg-gray-800 rounded" readonly placeholder="$0.00">
+        </div>
+
+        <div id="bet-result"></div>
+        <button id="bet-button" class="w-full bg-green-500 py-2 rounded">Bet</button>
+
+
+        <div class="flex items-center">
+            <input type="range" id="slider" class="w-full h-2 bg-red-400 rounded-lg appearance-none cursor-pointer" min="2" max="100" value="57">
+        </div>
+
+        <div class="flex justify-between text-xs">
+            <span>0</span>
+            <span>25</span>
+            <span>50</span>
+            <span>75</span>
+            <span>100</span>
+        </div>
+
+        <div class="flex justify-between items-center text-center">
+            <div>
+                <label for="multiplier" class="block text-sm">Multiplier</label>
+                <input type="text" id="multiplier" class="bg-gray-800 p-2 rounded text-white mx-auto" readonly value="3.000">
+            </div>
+
+            <div>
+                <label for="roll-over" class="block text-sm">Roll Over</label>
+                <input type="text" id="roll-over" class="bg-gray-800 p-2 rounded text-white mx-auto" readonly value="57">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const slider = document.getElementById('slider');
+        const betButton = document.getElementById('bet-button');
+        const betResult = document.getElementById('bet-result');
+        const rollOverInput = document.getElementById('roll-over');
+        const profitOnWinInput = document.getElementById('profit-on-win');
+        const betAmountInput = document.getElementById('bet-amount');
+        const multiplierInput = document.getElementById('multiplier');
+
+        slider.oninput = function() {
+            rollOverInput.value = this.value;
+            multiplierInput.value = calculateMultiplier(this.value).toFixed(2);
+            calculateProfit();
+        };
+
+        betAmountInput.oninput = calculateProfit;
+
+        function calculateMultiplier(rollOver) {
+            if (rollOver >= 80) {
+                return 5 + ((rollOver - 80) * (44 / 20)); // From 5x at 80 to 49x at 100
+            } else {
+                return 1.01 + ((rollOver - 2) * (3.99 / 78)); // From 1.01x at 2 to 5x at 80
+            }
+        }
+
+        function calculateProfit() {
+            const betAmount = parseFloat(betAmountInput.value) || 0;
+            const multiplier = parseFloat(multiplierInput.value) || 0;
+            const profit = betAmount * (multiplier - 1);
+            profitOnWinInput.value = profit.toFixed(2);
+        }
+
+        // Update the slider background gradient based on the thumb position
+        function updateSliderGradient(value) {
+            let percentage = (value - slider.min) / (slider.max - slider.min) * 100;
+            slider.style.background = `linear-gradient(to right, red 0%, red ${percentage}%, green ${percentage}%, green 100%)`;
+        }
+
+        slider.addEventListener('input', () => {
+            updateSliderGradient(slider.value);
+            // ... rest of the input event listener ...
+        });
+
+        // Initial setting of the gradient
+        updateSliderGradient(slider.value);
+
+        betButton.onclick = function() {
+            const rollOver = parseFloat(rollOverInput.value);
+            const betAmount = parseFloat(betAmountInput.value);
+            const multiplier = parseFloat(multiplierInput.value);
+            const randomRoll = Math.floor(Math.random() * 100) + 1; // Random roll between 1 and 100
+            const win = randomRoll >= rollOver;
+            
+            let resultText = `You Rolled: ${randomRoll}\n`;
+            if (win) {
+                const profit = (betAmount * multiplier).toFixed(2);
+                resultText += `Your payout is $${profit}`;
+                betResult.className = 'bg-green-500';
+            } else {
+                resultText += "You lost. Whomp Whomp GO KILL YOURSELF.";
+                betResult.className = 'bg-red-500';
+            }
+
+            betResult.textContent = resultText;
+            betResult.style.display = 'block';
+        };
+    </script>
+</body>
+</html>
+

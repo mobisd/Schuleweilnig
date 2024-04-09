@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bewertungstabelle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -12,85 +13,185 @@
 
     
     <div class="container mx-auto my-8">
-        <div class="w-1/4 pr-4">
-            <div class="bg-white shadow-lg rounded-lg p-4 w-64">
-                <p class="font-bold text-lg mb-4">Navigation</p>
-                <ul class="space-y-2">
+      <div class="flex justify-between items-center mb-4">
+        <select id="language-select" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
+            <option value="de">Deutsch (de)</option>
+          </select>
+      <div class="flex items-center">
+        <input class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" type="search" placeholder="Abgabe Suchen">
+        <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded ml-2">Search</button>
+      </div>
+      <div>
+        <span class="text-gray-700 text-sm">Schmid Moritz</span>
+      </div>
+    </div>
+    <div class="flex">
+      <div class="w-1/4 pr-4">
+        <div class="bg-white shadow-lg rounded-lg p-4 w-64">
+            <p class="font-bold text-lg mb-4">Navigation</p>
+            <ul class="space-y-2">
+              <li>
+                <a href="/Main/main.html" class="flex items-center text-gray-900 hover:text-red-500 transition-colors">
+                  <i class="fas fa-home mr-2"></i> Startseite
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex items-center text-gray-900 hover:text-red-500 transition-colors">
+                  <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
+                </a>
+              </li>
+              <li>
+                <a href="/gambling hihihih/mobigambling.html" class="flex items-center text-gray-900 hover:text-red-500 transition-colors">
+                  <i class="fas fa-dice mr-2"></i> GAMBLING RAHHHHH
+                </a>
+              </li>
+              <li>
+                <div class="flex items-center cursor-pointer" onclick="toggleDropdown('meine-kurse-dropdown')">
+                  <i class="fas fa-caret-right mr-2"></i>
+                  <span class="text-gray-900 hover:text-red-500 transition-colors">Meine Kurse</span>
+                </div>
+                <ul id="meine-kurse-dropdown" class="hidden pl-4">
                   <li>
-                    <a href="#" class="flex items-center text-gray-900 hover:text-red-500 transition-colors">
-                      <i class="fas fa-home mr-2"></i> Startseite
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="flex items-center text-gray-900 hover:text-red-500 transition-colors">
-                      <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
-                    </a>
-                  </li>
-                  <li>
-                    <div class="flex items-center cursor-pointer" onclick="toggleDropdown('meine-kurse-dropdown')">
+                    <div class="flex items-center cursor-pointer" onclick="toggleDropdown('fitn-dropdown')">
                       <i class="fas fa-caret-right mr-2"></i>
-                      <span class="text-gray-900 hover:text-red-500 transition-colors">Meine Kurse</span>
+                      <span class="text-gray-900 hover:text-red-500 transition-colors">FITN/M (FID)</span>
                     </div>
-                    <ul id="meine-kurse-dropdown" class="hidden pl-4">
+                    <ul id="fitn-dropdown" class="hidden pl-4">
                       <li>
-                        <div class="flex items-center cursor-pointer" onclick="toggleDropdown('fitn-dropdown')">
+                        <div class="flex items-center cursor-pointer" onclick="toggleDropdown('3afit-dropdown')">
                           <i class="fas fa-caret-right mr-2"></i>
-                          <span class="text-gray-900 hover:text-red-500 transition-colors">FITN/M (FID)</span>
+                          <span class="text-gray-900 hover:text-red-500 transition-colors"><a href="courses.html">3AFITN</a></span>
                         </div>
-                        <ul id="fitn-dropdown" class="hidden pl-4">
-                          <li>
-                            <div class="flex items-center cursor-pointer" onclick="toggleDropdown('3afit-dropdown')">
-                              <i class="fas fa-caret-right mr-2"></i>
-                              <span class="text-gray-900 hover:text-red-500 transition-colors">3AFIT</span>
-                            </div>
-                            <ul id="3afit-dropdown" class="hidden pl-4">
-                              <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">SYTCP_3AFIT_2324</a></li>
-                              <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">MEDT_3AFIT_2324</a></li>
-                              <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">MEDTw_3AFIT_2324</a></li>
-                              <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">NWT4a_3AFIT_2324</a></li>
-                              <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">NWT_3AFIT_2324</a></li>
-                              <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">AM_3AFIT_2324</a></li>
-                              <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">INSI_3AFIT_2324</a></li>
-                              <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">SYT_3AFIT_2324</a></li>
-                              <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">SYTLAB_3AFIT_2324</a></li>
-                            </ul>
-                          </li>
+                        <ul id="3afit-dropdown" class="hidden pl-4">
+                          <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">SYTCP_3AFIT_2324</a></li>
+                          <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">MEDT_3AFIT_2324</a></li>
+                          <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">MEDTw_3AFIT_2324</a></li>
+                          <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">NWT4a_3AFIT_2324</a></li>
+                          <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">NWT_3AFIT_2324</a></li>
+                          <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">AM_3AFIT_2324</a></li>
+                          <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">INSI_3AFIT_2324</a></li>
+                          <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">SYT_3AFIT_2324</a></li>
+                          <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">SYTLAB_3AFIT_2324</a></li>
                         </ul>
                       </li>
                     </ul>
                   </li>
-                  
                 </ul>
-              </div>
+              </li>
+              
+            </ul>
           </div>
-        <div class="shadow overflow-hidden rounded border-b border-gray-200">
-            <table class="min-w-full bg-white">
-                <thead class="bg-gray-800 text-white">
-                    <tr>
-                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Bewertungsaspekt</th>
-                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Berechnete Gewichtung</th>
-                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Bewertung</th>
-                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Bereich</th>
-                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Prozentsatz</th>
-                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Feedback</th>
-                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Beiträge zum Kurs gesamt</th>
-                    </tr>
-                </thead>
-                <tbody class="text-gray-700">
-                    <tr>
-                        <td class="text-left py-3 px-4">SYT_3AFITR_2324</td>
-                        <td class="text-left py-3 px-4">12,50 %</td>
-                        <td class="text-left py-3 px-4">70 % (3)</td>
-                        <td class="text-left py-3 px-4">0–100 %</td>
-                        <td class="text-left py-3 px-4">70 %</td>
-                        <td class="text-left py-3 px-4">Material? Arbeitsstunden? Anmerkung, dass das Kabel nicht fertig wurde fehlt?</td>
-                        <td class="text-left py-3 px-4">4 %</td>
-                    </tr>
-                    <!-- ... Other rows ... -->
-                </tbody>
-            </table>
+      </div>
+
+      <div class="container mx-auto my-8 p-6 bg-white rounded shadow-lg">
+        <h1 class="text-xl font-bold mb-4">SYTCP - Systemtechnik Computerpraktikum - 3AFITN - SJ2324</h1>
+        <div class="overflow-x-auto">
+          <table class="min-w-full leading-normal">
+            <thead>
+              <tr>
+                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-800 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                  Bewertungsaspekt
+                </th>
+                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-800 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                  Berechnete Gewichtung
+                </th>
+                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-800 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                  Bewertung
+                </th>
+                  <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-800 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                    Feedback
+                  </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">SYT_3AFITR_2324</p>
+                </td>
+                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">12,50 %</p>
+                </td>
+                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">70 % (3)</p>
+                </td>
+                <td>
+                  BIST DU DUMM?
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
+           
+  </div>
     </div>
+
+    <footer class="bg-white dark:bg-gray-900">
+      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+          <div class="md:flex md:justify-between">
+            <div class="mb-6 md:mb-0">
+                <a href="https://flowbite.com/" class="flex items-center">
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Moodle</span>
+                </a>
+            </div>
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <a href="https://www.tiktok.com/@mobi.vfx" class="hover:underline ">TikTok</a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/htl_spengergasse/" class="hover:underline">Insta</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 Schmid, Tadeja, Popov <a href="https://flowbite.com/" class="hover:underline">Moodle™</a>. All Rights Reserved.
+            </span>
+            <div class="flex mt-4 sm:justify-center sm:mt-0">
+              <a href="https://www.tiktok.com/@mobi.vfx" class="text-gray-500 hover:text-gray-900 dark:hover:text-dark ms-5">
+                <i class="fas fa-home"></i> Home
+              </a>
+              <a href="https://www.instagram.com/htl_spengergasse/" class="text-gray-500 hover:text-gray-900 dark:hover:text-dark ms-5">
+                <i class="fab fa-instagram"></i> Instagram
+              </a>
+              <a href="https://www.tiktok.com/@mobi.vfx" class="text-gray-500 hover:text-gray-900 dark:hover:text-dark ms-5">
+                <i class="fab fa-tiktok"></i> TikTok
+              </a>
+            </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      function toggleDropdown(dropdownId) {
+        var element = document.getElementById(dropdownId);
+        var caret = element.previousElementSibling.getElementsByTagName('i')[0];
+        if (element.classList.contains('hidden')) {
+          element.classList.remove('hidden');
+          caret.classList.remove('fa-caret-right');
+          caret.classList.add('fa-caret-down');
+        } else {
+          element.classList.add('hidden');
+          caret.classList.add('fa-caret-right');
+          caret.classList.remove('fa-caret-down');
+        }
+      }
+      </script>
 </body>
 
 </html>
