@@ -11,6 +11,7 @@
 </head>
 <body class="bg-gray-100">
     <!-- Header -->
+    <div class="container mx-auto my-8">
     <div class="flex justify-between items-center mb-4">
         <select id="language-select" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
             <option value="de">Deutsch (de)</option>
@@ -62,10 +63,10 @@
                             <li>
                               <div class="flex items-center cursor-pointer" onclick="toggleDropdown('3afit-dropdown')">
                                 <i class="fas fa-caret-right mr-2"></i>
-                                <span class="text-gray-900 hover:text-red-500 transition-colors"><a href="courses.html">3AFITN</a></span>
+                                <span class="text-gray-900 hover:text-red-500 transition-colors"><a href="">3AFITN</a></span>
                               </div>
                               <ul id="3afit-dropdown" class="hidden pl-4">
-                                <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">SYTCP_3AFIT_2324</a></li>
+                                <li><a href="/Courses/Moritz/syt.html" class="text-red-900 hover:text-red-500 transition-colors">SYTCP_3AFIT_2324</a></li>
                                 <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">MEDT_3AFIT_2324</a></li>
                                 <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">MEDTw_3AFIT_2324</a></li>
                                 <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">NWT4a_3AFIT_2324</a></li>
@@ -94,12 +95,12 @@
             </div>
         </div>
     </div>
-
+</div>
     <footer class="bg-white dark:bg-gray-900">
         <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
             <div class="md:flex md:justify-between">
               <div class="mb-6 md:mb-0">
-                  <a href="https://flowbite.com/" class="flex items-center">
+                  <a href="/Main/main.html" class="flex items-center">
                       <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Moodle</span>
                   </a>
               </div>
@@ -146,5 +147,21 @@
           </div>
         </div>
       </footer>
+
+      <script>
+        function toggleDropdown(dropdownId) {
+          var element = document.getElementById(dropdownId);
+          var caret = element.previousElementSibling.getElementsByTagName('i')[0];
+          if (element.classList.contains('hidden')) {
+            element.classList.remove('hidden');
+            caret.classList.remove('fa-caret-right');
+            caret.classList.add('fa-caret-down');
+          } else {
+            element.classList.add('hidden');
+            caret.classList.add('fa-caret-right');
+            caret.classList.remove('fa-caret-down');
+          }
+        }
+        </script>
 </body>
 </html>
