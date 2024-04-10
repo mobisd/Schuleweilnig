@@ -10,158 +10,265 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100">
-    <!-- Header -->
-    <div class="container mx-auto my-8">
-    <div class="flex justify-between items-center mb-4">
-        <select id="language-select" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
-            <option value="de">Deutsch (de)</option>
-          </select>
-      <div class="flex items-center">
-        <input class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" type="search" placeholder="Kurse suchen">
-        <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded ml-2">Search</button>
-      </div>
-      <div>
-        <span class="text-gray-700 text-sm">Schmid Moritz</span>
-      </div>
-    </div>
-
-    <!-- Main content area -->
-    <div class="container mx-auto p-4">
-        <!-- Sidebar & Content -->
-        <div class="flex">
-            <div class="w-1/4 pr-4">
-              <div class="bg-white shadow-lg rounded-lg p-4 w-64">
-                  <p class="font-bold text-lg mb-4">Navigation</p>
-                  <ul class="space-y-2">
-                    <li>
-                      <a href="/Main/main.html" class="flex items-center text-gray-900 hover:text-red-500 transition-colors">
-                        <i class="fas fa-home mr-2"></i> Startseite
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="flex items-center text-gray-900 hover:text-red-500 transition-colors">
-                        <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/gambling hihihih/mobigambling.html" class="flex items-center text-gray-900 hover:text-red-500 transition-colors">
-                        <i class="fas fa-dice mr-2"></i> GAMBLING RAHHHHH
-                      </a>
-                    </li>
-                    <li>
-                      <div class="flex items-center cursor-pointer" onclick="toggleDropdown('meine-kurse-dropdown')">
-                        <i class="fas fa-caret-right mr-2"></i>
-                        <span class="text-gray-900 hover:text-red-500 transition-colors">Meine Kurse</span>
-                      </div>
-                      <ul id="meine-kurse-dropdown" class="hidden pl-4">
-                        <li>
-                          <div class="flex items-center cursor-pointer" onclick="toggleDropdown('fitn-dropdown')">
-                            <i class="fas fa-caret-right mr-2"></i>
-                            <span class="text-gray-900 hover:text-red-500 transition-colors">FITN/M (FID)</span>
-                          </div>
-                          <ul id="fitn-dropdown" class="hidden pl-4">
-                            <li>
-                              <div class="flex items-center cursor-pointer" onclick="toggleDropdown('3afit-dropdown')">
-                                <i class="fas fa-caret-right mr-2"></i>
-                                <span class="text-gray-900 hover:text-red-500 transition-colors"><a href="">3AFITN</a></span>
-                              </div>
-                              <ul id="3afit-dropdown" class="hidden pl-4">
-                                <li><a href="/Courses/Moritz/syt.html" class="text-red-900 hover:text-red-500 transition-colors">SYTCP_3AFIT_2324</a></li>
-                                <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">MEDT_3AFIT_2324</a></li>
-                                <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">MEDTw_3AFIT_2324</a></li>
-                                <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">NWT4a_3AFIT_2324</a></li>
-                                <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">NWT_3AFIT_2324</a></li>
-                                <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">AM_3AFIT_2324</a></li>
-                                <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">INSI_3AFIT_2324</a></li>
-                                <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">SYT_3AFIT_2324</a></li>
-                                <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">SYTLAB_3AFIT_2324</a></li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    
-                  </ul>
-                </div>
+    <header class="container mx-auto my-8">
+        <div class="flex justify-between items-center mb-4">
+            <select id="language-select" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
+                <option value="de">Deutsch (de)</option>
+            </select>
+            <div class="flex items-center">
+                <input class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" type="search" placeholder="Kurse suchen">
+                <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded ml-2">Search</button>
             </div>
-
-            <!-- Main content -->
-            <div class="w-3/4">
-                <div class="bg-white p-4 rounded-lg shadow-lg">
-                    <h2 class="font-semibold mb-2">Kursbereiche</h2>
-                    <!-- Course areas content -->
-                </div>
+            <div>
+                <span class="text-gray-700 text-sm">Schmid Moritz</span>
             </div>
         </div>
-    </div>
-</div>
-    <footer class="bg-white dark:bg-gray-900">
-        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-            <div class="md:flex md:justify-between">
-              <div class="mb-6 md:mb-0">
-                  <a href="/Main/main.html" class="flex items-center">
-                      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Moodle</span>
+    </header>
+    <main class="container mx-auto p-4">
+        <div class="flex">
+            <aside class="w-1/4 pr-4">
+                <section class="bg-white shadow-lg rounded-lg p-4 mb-4">
+                    <h2 class="text-xl font-semibold mb-4">Kalender</h2>
+                    <div id="calendar" class="grid grid-cols-7 gap-4 p-4">
+                                                <!-- Calendar dates will be generated by JavaScript -->
+                    </div>
+                  </section>
+                  <nav class="bg-white shadow-lg rounded-lg p-4 w-64">
+                      <p class="font-bold text-lg mb-4">Navigation</p>
+                      <ul class="space-y-2">
+                          <li>
+                              <a href="/Main/main.html" class="flex items-center text-gray-900 hover:text-red-500 transition-colors">
+                                  <i class="fas fa-home mr-2"></i> Startseite
+                              </a>
+                          </li>
+                          <li>
+                              <a href="#" class="flex items-center text-gray-900 hover:text-red-500 transition-colors">
+                                  <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
+                              </a>
+                          </li>
+                          <li>
+                              <a href="/gambling hihihih/mobigambling.html" class="flex items-center text-gray-900 hover:text-red-500 transition-colors">
+                                  <i class="fas fa-dice mr-2"></i> GAMBLING RAHHHHH
+                              </a>
+                          </li>
+                          <li>
+                              <div class="flex items-center cursor-pointer" onclick="toggleDropdown('meine-kurse-dropdown')">
+                                  <i class="fas fa-caret-right mr-2"></i>
+                                  <span class="text-gray-900 hover:text-red-500 transition-colors">Meine Kurse</span>
+                              </div>
+                              <ul id="meine-kurse-dropdown" class="hidden pl-4">
+                                  <li>
+                                      <div class="flex items-center cursor-pointer" onclick="toggleDropdown('fitn-dropdown')">
+                                          <i class="fas fa-caret-right mr-2"></i>
+                                          <span class="text-gray-900 hover:text-red-500 transition-colors">FITN/M (FID)</span>
+                                      </div>
+                                      <ul id="fitn-dropdown" class="hidden pl-4">
+                                          <li>
+                                              <div class="flex items-center cursor-pointer" onclick="toggleDropdown('3afit-dropdown')">
+                                                  <i class="fas fa-caret-right mr-2"></i>
+                                                  <span class="text-gray-900 hover:text-red-500 transition-colors"><a href="/Courses/Moritz/courses.html">3AFITN</a></span>
+                                              </div>
+                                              <ul id="3afit-dropdown" class="hidden pl-4">
+                                                  <li><a href="/Courses/Moritz/syt.html" class="text-red-900 hover:text-red-500 transition-colors">SYTCP_3AFIT_2324</a></li>
+                                                  <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">MEDT_3AFIT_2324</a></li>
+                                                  <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">MEDTw_3AFIT_2324</a></li>
+                                                  <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">NWT4a_3AFIT_2324</a></li>
+                                                  <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">NWT_3AFIT_2324</a></li>
+                                                  <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">AM_3AFIT_2324</a></li>
+                                                  <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">INSI_3AFIT_2324</a></li>
+                                                  <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">SYT_3AFIT_2324</a></li>
+                                                  <li><a href="#" class="text-red-900 hover:text-red-500 transition-colors">SYTLAB_3AFIT_2324</a></li>
+                                              </ul>
+                                          </li>
+                                      </ul>
+                                  </li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </nav>
+              </aside>
+              <section class="w-3/4">
+                  <div class="bg-white p-4 rounded-lg shadow-lg">
+                      <h1 class="font-bold mb-2">Kursbereiche</h1>
+                      <div class="w-3/4"> 
+                            <div class="space-y-4">
+                                <a href="syt.html" class="block pb-4 hover:bg-red-50 hover-effect">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">AIF</h3>
+                                </a>
+                            </div>
+                              <div class="border-b border-gray-200 pb-4">
+                                <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">BIF</h3>
+                                </a>
+                            </div>
+                              <div class="border-b border-gray-200 pb-4">
+                                <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">CIF</h3>
+                                </a>
+                            </div>
+                              <div class="border-b border-gray-200 pb-4">
+                                <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">CMNA</h3>
+                                </a>
+                            </div>
+                              <div class="border-b border-gray-200 pb-4">
+                                <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">CMNG</h3>
+                            </a>
+                        </div>
+                            <div class="border-b border-gray-200 pb-4">
+                                <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">FITN/M (FID)</h3>
+                                </a>
+                            </div>
+                            <div class="border-b border-gray-200 pb-4">
+                                <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">HBGM</h3>
+                                </a>
+                            </div>
+                            <div class="border-b border-gray-200 pb-4">
+                                <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">HIF</h3>
+                                </a>
+                            </div>
+                        <div class="border-b border-gray-200 pb-4">
+                            <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">HKUI</h3>
+                            </a>
+                        </div>
+                        <div class="border-b border-gray-200 pb-4">
+                          <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                              <h3 class="text-lg font-semibold text-gray-900 mb-2">HMNA</h3>
+                          </a>
+                      </div>
+                      <div class="border-b border-gray-200 pb-4">
+                        <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">HMNG</h3>
+                        </a>
+                    </div>
+                    <div class="border-b border-gray-200 pb-4">
+                      <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                          <h3 class="text-lg font-semibold text-gray-900 mb-2">HWII</h3>
+                      </a>
+                  </div>
+                  <div class="border-b border-gray-200 pb-4">
+                    <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">HWIT</h3>
+                    </a>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                  <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                      <h3 class="text-lg font-semibold text-gray-900 mb-2">KKUI</h3>
                   </a>
               </div>
-              <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-                  <div>
-                      <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
-                      <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                          <li class="mb-4">
-                              <a href="https://www.tiktok.com/@mobi.vfx" class="hover:underline ">TikTok</a>
-                          </li>
-                          <li>
-                              <a href="https://www.instagram.com/htl_spengergasse/" class="hover:underline">Insta</a>
-                          </li>
-                      </ul>
-                  </div>
-                  <div>
-                      <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                      <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                          <li class="mb-4">
-                              <a href="#" class="hover:underline">Privacy Policy</a>
-                          </li>
-                          <li>
-                              <a href="#" class="hover:underline">Terms &amp; Conditions</a>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
+              <div class="border-b border-gray-200 pb-4">
+                <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">KIF</h3>
+                </a>
+            </div>
+            <div class="border-b border-gray-200 pb-4">
+              <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2">KKUX</h3>
+              </a>
           </div>
-          <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-          <div class="sm:flex sm:items-center sm:justify-between">
-              <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 Schmid, Tadeja, Popov <a href="#" class="hover:underline">Moodle™</a>. All Rights Reserved.
-              </span>
-              <div class="flex mt-4 sm:justify-center sm:mt-0">
-                <a href="https://www.tiktok.com/@mobi.vfx" class="text-gray-500 hover:text-gray-900 dark:hover:text-dark ms-5">
-                  <i class="fas fa-home"></i> Home
-                </a>
-                <a href="https://www.instagram.com/htl_spengergasse/" class="text-gray-500 hover:text-gray-900 dark:hover:text-dark ms-5">
-                  <i class="fab fa-instagram"></i> Instagram
-                </a>
-                <a href="https://www.tiktok.com/@mobi.vfx" class="text-gray-500 hover:text-gray-900 dark:hover:text-dark ms-5">
-                  <i class="fab fa-tiktok"></i> TikTok
-                </a>
-              </div>
-          </div>
+          <div class="border-b border-gray-200 pb-4">
+            <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">O</h3>
+            </a>
         </div>
+        <div class="border-b border-gray-200 pb-4">
+          <a href="URL_FOR_SYTCP" class="block pb-4 hover:bg-red-50 hover-effect">
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">VIF</h3>
+          </a>
+      </div>
+                          </div>
+                        </div>
+              </section>
+          </div>
+      </main>
+      <footer class="bg-white dark:bg-gray-900">
+          <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+              <div class="md:flex md:justify-between">
+                  <div class="mb-6 md:mb-0">
+                      <a href="/Main/main.html" class="flex items-center">
+                          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Moodle</span>
+                      </a>
+                  </div>
+                  <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                      <div>
+                          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+                          <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                              <li class="mb-4">
+                                  <a href="https://www.tiktok.com/@mobi.vfx" class="hover:underline ">TikTok</a>
+                              </li>
+                              <li>
+                                  <a href="https://www.instagram.com/htl_spengergasse/" class="hover:underline">Insta</a>
+                              </li>
+                          </ul>
+                      </div>
+                      <div>
+                          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                          <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                              <li class="mb-4">
+                                  <a href="#" class="hover:underline">Privacy Policy</a>
+                              </li>
+                              <li>
+                                  <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+              <div class="sm:flex sm:items-center sm:justify-between">
+                  <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 Schmid, Tadeja, Popov <a href="#" class="hover:underline">Moodle™</a>. All Rights Reserved.</span>
+                  <div class="flex mt-4 sm:justify-center sm:mt-0">
+                      <a href="https://www.tiktok.com/@mobi.vfx" class="text-gray-500 hover:text-gray-900 dark:hover:text-dark ms-5">
+                          <i class="fas fa-home"></i> Home
+                      </a>
+                      <a href="https://www.instagram.com/htl_spengergasse/" class="text-gray-500 hover:text-gray-900 dark:hover:text-dark ms-5">
+                          <i class="fab fa-instagram"></i> Instagram
+                      </a>
+                      <a href="https://www.tiktok.com/@mobi.vfx" class="text-gray-500 hover:text-gray-900 dark:hover:text-dark ms-5">
+                          <i class="fab fa-tiktok"></i> TikTok
+                      </a>
+                  </div>
+              </div>
+          </div>
       </footer>
-
       <script>
-        function toggleDropdown(dropdownId) {
-          var element = document.getElementById(dropdownId);
-          var caret = element.previousElementSibling.getElementsByTagName('i')[0];
-          if (element.classList.contains('hidden')) {
-            element.classList.remove('hidden');
-            caret.classList.remove('fa-caret-right');
-            caret.classList.add('fa-caret-down');
-          } else {
-            element.classList.add('hidden');
-            caret.classList.add('fa-caret-right');
-            caret.classList.remove('fa-caret-down');
+          document.addEventListener('DOMContentLoaded', generateCalendar);
+          function generateCalendar() {
+              const today = new Date();
+              const currentDay = today.getDate();
+              const currentMonth = today.getMonth();
+              const currentYear = today.getFullYear();
+              const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+              const calendarElement = document.getElementById('calendar');
+              for (let day = 1; day <= daysInMonth; day++) {
+                  const dayElement = document.createElement('div');
+                  dayElement.classList.add('w-10', 'h-10', 'flex', 'justify-center', 'items-center', 'text-sm');
+                  if (day === currentDay) {
+                      dayElement.classList.add('bg-red-500', 'text-white', 'rounded-full');
+                  }
+                  dayElement.textContent = day;
+                  calendarElement.appendChild(dayElement);
+              }
           }
-        }
-        </script>
-</body>
-</html>
+          function toggleDropdown(dropdownId) {
+              var element = document.getElementById(dropdownId);
+              var caret = element.previousElementSibling.getElementsByTagName('i')[0];
+              if (element.classList.contains('hidden')) {
+                  element.classList.remove('hidden');
+                  caret.classList.remove('fa-caret-right');
+                  caret.classList.add('fa-caret-down');
+              } else {
+                  element.classList.add('hidden');
+                  caret.classList.add('fa-caret-right');
+                  caret.classList.remove('fa-caret-down');
+              }
+          }
+      </script>
+  </body>
+  </html>
+  
